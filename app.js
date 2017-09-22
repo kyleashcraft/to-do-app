@@ -4,17 +4,19 @@ function onReady() {
 
 	function createNewToDo(){
 			var newToDoText = document.getElementById('newToDoText');
-			toDos.push({
-				title: newToDoText.value,
-				complete: false
-			});
-			newToDoText.value = '';
+			if (newToDoText.value !==''){
+				toDos.push({
+					title: newToDoText.value,
+					complete: false
+				});
+				newToDoText.value = '';
 
-			renderTheUI(toDos);
+				renderTheUI(toDos);
+			}
 	}
 
 	function renderTheUI(toDos){
-		var toDoList.getElementById('toDoList')
+		var toDoList = document.getElementById('toDoList');
 
 		toDoList.innerHTML ='';
 
@@ -25,11 +27,11 @@ function onReady() {
 			newLi.innerHTML = toDo.title;
 
 			toDoList.appendChild(newLi);
-			newLi.appendChild(checkbox);
+			newLi.appendChild(checkBox);
 		});
 	}
 
-	addToDoForm.addEventListener('submit', function(event) => {
+	addToDoForm.addEventListener('submit', function(event) {
 		event.preventDefault();
 		createNewToDo();
 	});
