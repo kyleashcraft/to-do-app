@@ -1,5 +1,5 @@
 function onReady() {
-	const addToDoForm = document.getElementById('addToDoForm');
+	/*const addToDoForm = document.getElementById('addToDoForm');
 	const newToDoText = document.getElementById('newToDoText');
 	const toDoList = document.getElementById('toDoList');
 	const formList = document.getElementById('list');
@@ -26,6 +26,7 @@ function onReady() {
 			toDoList.removeChild(document.getElementById('todo') );
 		};
 	});
+*/
 
 }
 
