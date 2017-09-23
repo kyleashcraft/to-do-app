@@ -36,7 +36,16 @@ function onReady() {
 		createNewToDo();
 	});
 
-
+	function removeLi() {
+		formList.addEventListener('submit', (event) => {
+			event.preventDefault();
+			let checkbox = document.getElementById("checkbox");
+			if (checkbox.checked){
+				checkbox.id="selected";
+				toDoList.removeChild(document.getElementById('todo') );
+			};
+		});
+	};
 
 
 }
