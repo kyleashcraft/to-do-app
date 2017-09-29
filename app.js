@@ -18,11 +18,17 @@ function onReady() {
 
 	function deleteToDos(){
 		var toDoList = document.getElementById('toDoList');
+		var arr = [];
 		if (toDos.length > 0){
 			for (var i = 0; i < toDos.length; i++){
-				if (toDoList.childNodes[i].firstElementChild.checked === true){
-					toDos.splice(i,1);
+				if (toDoList.childNodes[i].firstElementChild.checked === false){
+					arr.push(toDos[i]);
 				}
+			}
+			if (arr.length === toDos.length){
+				alert('Nothing is selected to delete!');
+			} else {
+				toDos = arr;
 			}
 		}
 		else {
@@ -37,13 +43,13 @@ function onReady() {
 		toDoList.innerHTML ='';
 
 		toDos.forEach(function(toDo){
-			var newLi = document.createElement('li')
-			var checkBox = document.createElement('input');
-			checkBox.type = 'checkbox';
-			newLi.innerHTML = toDo.title;
+				var newLi = document.createElement('li')
+				var checkBox = document.createElement('input');
+				checkBox.type = 'checkbox';
+				newLi.innerHTML = toDo.title;
 
-			toDoList.appendChild(newLi);
-			newLi.appendChild(checkBox);
+				toDoList.appendChild(newLi);
+				newLi.appendChild(checkBox);
 		});
 	}
 
