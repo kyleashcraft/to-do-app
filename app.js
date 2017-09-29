@@ -59,9 +59,9 @@ function onReady() {
 	});
 
 	list.addEventListener('submit', (event) => {
-			event.preventDefault();
-			deleteToDos();
-		});
+		event.preventDefault();
+		deleteToDos();
+	});
 }
 
 window.onload = function () {
